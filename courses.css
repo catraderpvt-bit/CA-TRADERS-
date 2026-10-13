@@ -1,0 +1,446 @@
+
+/* CA TRADERS - COURSES PAGE */
+
+:root {
+    --black: #070809;
+    --panel: #111213;
+    --gold: #ffb612;
+    --white: #ffffff;
+    --gray: #a9a9ad;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Inter', Arial, sans-serif;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* NAVIGATION */
+
+.navbar {
+    min-height: 85px;
+    padding: 16px 5.6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    border-bottom: 1px solid #252525;
+    background: #070809;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    font-size: 23px;
+    font-weight: 900;
+    white-space: nowrap;
+}
+
+.logo b {
+    color: var(--gold);
+}
+
+.logo-icon {
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    border: 2px solid var(--gold);
+    border-radius: 50%;
+    color: var(--gold);
+    font-size: 18px;
+}
+
+.navbar nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.navbar nav a {
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.navbar nav a:hover,
+.navbar nav a.active {
+    color: var(--gold);
+}
+
+.navbar nav .join-btn {
+    color: #111;
+    background: var(--gold);
+    padding: 12px 21px;
+    border-radius: 8px;
+    font-weight: 800;
+}
+
+.navbar nav .join-btn:hover {
+    background: #ffd05a;
+    color: #111;
+}
+
+/* PAGE HEADING */
+
+.page-heading {
+    text-align: center;
+    padding: 65px 20px 25px;
+}
+
+.eyebrow {
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.page-heading h1 {
+    font-size: clamp(36px, 5vw, 55px);
+    line-height: 1.15;
+    font-weight: 900;
+}
+
+.page-heading h1 span {
+    color: var(--gold);
+}
+
+.page-heading > p:last-child {
+    color: var(--gray);
+    font-size: 14px;
+    margin-top: 12px;
+}
+
+/* COURSE SECTION */
+
+.courses {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 15px 30px 70px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.course-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 350px;
+    gap: 35px;
+    padding: 45px;
+    border: 1px solid #292929;
+    border-radius: 15px;
+
+    background:
+        radial-gradient(
+            circle at 15% 0%,
+            rgba(255, 182, 18, 0.035),
+            transparent 50%
+        ),
+        #111116;
+
+    transition: border-color 0.3s, transform 0.3s;
+}
+
+.course-card:hover {
+    border-color: rgba(255, 182, 18, 0.65);
+    transform: translateY(-3px);
+}
+
+.course-card.featured {
+    border-color: var(--gold);
+    box-shadow: 0 0 30px rgba(255, 182, 18, 0.07);
+}
+
+/* LEFT SIDE DETAILS */
+
+.course-info {
+    padding-top: 2px;
+}
+
+.course-label {
+    display: inline-block;
+    background: rgba(255, 182, 18, 0.11);
+    color: var(--gold);
+    border: 1px solid rgba(255, 182, 18, 0.18);
+    border-radius: 5px;
+    padding: 7px 12px;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-bottom: 23px;
+}
+
+.course-info h2 {
+    font-size: clamp(25px, 3vw, 34px);
+    line-height: 1.25;
+    letter-spacing: -0.7px;
+    margin-bottom: 17px;
+}
+
+.description {
+    color: #b4b4bd;
+    font-size: 14px;
+    max-width: 650px;
+    margin-bottom: 34px;
+}
+
+/* COURSE DETAILS GRID */
+
+.details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px 35px;
+    max-width: 560px;
+}
+
+.details strong {
+    display: block;
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.details p {
+    color: #b6b6c0;
+    font-size: 13px;
+}
+
+/* RIGHT PRICE BOX */
+
+.price-box {
+    padding: 27px 29px;
+    background: #090a0e;
+    border: 1px solid #303039;
+    border-radius: 13px;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    width: 100%;
+}
+
+.price-label {
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.price-box h3 {
+    font-size: clamp(29px, 3vw, 39px);
+    font-weight: 900;
+    letter-spacing: -1px;
+    white-space: nowrap;
+}
+
+.payment {
+    color: #b5b5bd;
+    font-size: 12px;
+    margin: 12px 0 24px;
+}
+
+.price-box ul {
+    list-style: none;
+    margin-bottom: 25px;
+}
+
+.price-box li {
+    font-size: 13px;
+    margin: 13px 0;
+    color: #ededed;
+}
+
+.price-box li::first-letter {
+    color: var(--gold);
+}
+
+.enroll-btn {
+    display: block;
+    text-align: center;
+    background: var(--gold);
+    color: #111;
+    font-size: 13px;
+    font-weight: 900;
+    padding: 14px 18px;
+    border-radius: 7px;
+    margin-top: auto;
+    transition: 0.3s;
+}
+
+.enroll-btn:hover {
+    background: #ffd05a;
+    transform: translateY(-2px);
+}
+
+.note {
+    text-align: center;
+    color: #85858e;
+    font-size: 11px;
+    line-height: 1.8;
+    max-width: 800px;
+    align-self: center;
+}
+
+/* CONTACT SECTION */
+
+.contact-section {
+    padding: 60px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    flex-wrap: wrap;
+    background:
+        radial-gradient(
+            circle at 15% 100%,
+            rgba(255, 182, 18, 0.08),
+            transparent 55%
+        ),
+        #101112;
+    border-top: 1px solid #292929;
+}
+
+.contact-section h2 {
+    font-size: clamp(25px, 3vw, 38px);
+    line-height: 1.25;
+}
+
+.contact-section h2 span {
+    color: var(--gold);
+}
+
+.contact-section p:last-child {
+    color: var(--gray);
+    font-size: 13px;
+    margin-top: 12px;
+}
+
+.contact-section .join-btn {
+    display: inline-block;
+    padding: 14px 21px;
+    border-radius: 7px;
+    background: var(--gold);
+    color: #111;
+    font-weight: 800;
+    font-size: 12px;
+}
+
+/* FOOTER */
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 27px 5.6%;
+    border-top: 1px solid #252525;
+}
+
+footer p,
+footer small {
+    color: #929292;
+    font-size: 11px;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+    .navbar {
+        padding: 17px 4%;
+    }
+
+    .navbar nav {
+        gap: 14px;
+    }
+
+    .navbar nav a {
+        font-size: 12px;
+    }
+
+    .course-card {
+        grid-template-columns: minmax(0, 1fr) 300px;
+        padding: 30px;
+        gap: 24px;
+    }
+
+    .price-box {
+        padding: 23px 20px;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+    .navbar {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .navbar nav {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 13px 20px;
+    }
+
+    .page-heading {
+        padding-top: 45px;
+    }
+
+    .courses {
+        padding: 15px 16px 45px;
+        gap: 23px;
+    }
+
+    .course-card {
+        grid-template-columns: 1fr;
+        padding: 23px 18px;
+        gap: 28px;
+    }
+
+    .course-info h2 {
+        font-size: 27px;
+    }
+
+    .description {
+        margin-bottom: 25px;
+    }
+
+    .details {
+        gap: 20px 12px;
+    }
+
+    .price-box {
+        width: 100%;
+        padding: 24px 20px;
+    }
+
+    .price-box h3 {
+        font-size: 34px;
+    }
+
+    .contact-section {
+        padding: 42px 22px;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 25px 22px;
+    }
+}

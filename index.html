@@ -1,0 +1,1823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CA TRADERS | Crypto Currency Trading Academy</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background: #050608;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        :root {
+            --gold: #ffb51b;
+            --gold-light: #ffd15c;
+            --dark: #050608;
+            --card: #0d0f12;
+            --border: rgba(255, 181, 27, 0.35);
+            --text-gray: #a7a7a7;
+        }
+
+        /* ================= NAVBAR ================= */
+
+.navbar {
+    position: relative;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 24px;
+    background: #050505;
+    border-bottom: 1px solid #242424;
+}
+
+/* LOGO */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-circle {
+    width: 44px;
+    height: 44px;
+    border: 2px solid #ffb800;
+    border-radius: 50%;
+    color: #ffb800;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 21px;
+    font-weight: 900;
+}
+
+.logo-text h2 {
+    color: #fff;
+    font-size: 18px;
+    margin: 0;
+}
+
+.logo-text p {
+    color: #aaa;
+    font-size: 8px;
+    letter-spacing: 1px;
+    margin: 3px 0 0;
+}
+
+/* HAMBURGER BUTTON */
+.menu-toggle {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    border-radius: 3px;
+    transition: 0.3s ease;
+}
+
+/* X ANIMATION */
+.menu-toggle.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+/* DROPDOWN MENU */
+.nav-menu {
+    position: absolute;
+    top: 100%;
+    right: 12px;
+    width: 250px;
+    padding: 12px;
+    background: #101010;
+    border: 1px solid #292929;
+    border-top: 2px solid #ffb800;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: 0.25s ease;
+}
+
+/* OPEN MENU */
+.nav-menu.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* MENU LINKS */
+.nav-menu a {
+    color: #fff;
+    text-decoration: none;
+    padding: 13px 12px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: 0.2s ease;
+}
+
+.nav-menu a:hover {
+    background: #222;
+    color: #ffb800;
+}
+
+/* JOIN BUTTON */
+.nav-menu a.menu-join {
+    background: #ffb800;
+    color: #000;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.nav-menu a.menu-join:hover {
+    background: #ffc933;
+    color: #000;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 600px) {
+    .navbar {
+        padding: 12px 18px;
+    }
+
+    .logo-circle {
+        width: 42px;
+        height: 42px;
+    }
+
+    .logo-text h2 {
+        font-size: 16px;
+    }
+
+    .logo-text p {
+        font-size: 7px;
+    }
+
+    .nav-menu {
+        right: 10px;
+        width: min(250px, calc(100vw - 40px));
+    }
+}
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 100vh;
+            padding: 150px 25px 70px;
+
+            position: relative;
+            overflow: hidden;
+
+            background:
+                radial-gradient(circle at 75% 45%, rgba(255,181,27,.12), transparent 30%),
+                radial-gradient(circle at 20% 30%, rgba(255,181,27,.05), transparent 30%),
+                #050608;
+        }
+
+        .hero-grid {
+            max-width: 1250px;
+            margin: auto;
+
+            min-height: 650px;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(42px, 5vw, 72px);
+            line-height: 1.05;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+        }
+
+        .gold-text {
+            color: var(--gold);
+        }
+
+        .hero-content p {
+            max-width: 570px;
+            color: #b8b8b8;
+            font-size: 17px;
+            line-height: 1.7;
+            margin-bottom: 35px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+
+            padding: 15px 25px;
+            border-radius: 7px;
+            text-decoration: none;
+
+            font-size: 14px;
+            font-weight: 800;
+
+            transition: .3s;
+        }
+
+        .btn-primary {
+            background: var(--gold);
+            color: #080808;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(255,181,27,.25);
+        }
+
+        .btn-outline {
+            border: 1px solid var(--gold);
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background: var(--gold);
+            color: #080808;
+        }
+
+        /* ================= BITCOIN VISUAL ================= */
+
+        .hero-visual {
+            min-height: 500px;
+            position: relative;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .chart-bg {
+            position: absolute;
+            inset: 40px 0 20px;
+
+            opacity: .5;
+
+            background:
+                linear-gradient(rgba(255,181,27,.08) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,181,27,.08) 1px, transparent 1px);
+
+            background-size: 55px 55px;
+
+            transform: perspective(500px) rotateX(20deg);
+        }
+
+        .chart-line {
+            position: absolute;
+            width: 100%;
+            height: 250px;
+            bottom: 110px;
+        }
+
+        .chart-line svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .bitcoin {
+            position: relative;
+            z-index: 4;
+
+            width: 250px;
+            height: 250px;
+
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 120px;
+            font-weight: 800;
+
+            color: #fff;
+
+            background:
+                radial-gradient(circle at 35% 25%, #ffe082, #ffb000 40%, #c87800 75%);
+
+            border: 8px solid #ffca39;
+
+            box-shadow:
+                0 0 30px rgba(255,181,27,.8),
+                0 0 100px rgba(255,181,27,.3);
+
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .bitcoin::after {
+            content: "";
+            position: absolute;
+            width: 330px;
+            height: 45px;
+            bottom: -70px;
+
+            border-radius: 50%;
+
+            background: rgba(255,181,27,.3);
+            filter: blur(15px);
+        }
+
+        @keyframes float {
+            0%,100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        
+/* STATS COUNTER SECTION */
+
+.stats-section {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 20px auto;
+    width: 92%;
+    max-width: 1400px;
+
+    background: #0b0c0d;
+    border: 1px solid #74520b;
+    border-radius: 11px;
+    overflow: hidden;
+}
+
+.stat-box {
+    text-align: center;
+    padding: 22px 12px;
+    border-right: 1px solid #292929;
+}
+
+.stat-box:last-child {
+    border-right: none;
+}
+
+.stat-box h2 {
+    color: #ffb612;
+    font-size: 30px;
+    font-weight: 900;
+    line-height: 1.3;
+    margin-bottom: 3px;
+}
+
+.stat-box p {
+    color: #b0b0b0;
+    font-size: 13px;
+}
+
+/* Subtle animation when counters appear */
+
+.stat-box h2.counting {
+    animation: counterGlow 0.6s ease;
+}
+
+@keyframes counterGlow {
+    0% {
+        opacity: 0.4;
+        transform: translateY(8px);
+        text-shadow: 0 0 0 transparent;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        text-shadow: 0 0 12px rgba(255, 182, 18, 0.25);
+    }
+}
+
+/* Mobile responsive */
+
+@media (max-width: 600px) {
+    .stats-section {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stat-box:nth-child(2) {
+        border-right: none;
+    }
+
+    .stat-box:nth-child(1),
+    .stat-box:nth-child(2) {
+        border-bottom: 1px solid #292929;
+    }
+
+    .stat-box h2 {
+        font-size: 26px;
+    }
+}
+
+
+        /* ================= FEATURES ================= */
+
+        .features {
+            max-width: 1250px;
+            margin: 60px auto 0;
+            padding: 0 25px;
+
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            background: #0b0d0f;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 35px 20px;
+
+            border-right: 1px solid rgba(255,255,255,.1);
+        }
+
+        .feature:last-child {
+            border-right: none;
+        }
+
+        .feature-icon {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .feature h3 {
+            font-size: 15px;
+            margin-bottom: 10px;
+        }
+
+        .feature p {
+            color: #999;
+            font-size: 12px;
+            line-height: 1.6;
+        }
+
+        /* ================= SECTION ================= */
+
+        .section {
+            max-width: 1250px;
+            margin: 100px auto;
+            padding: 0 25px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 38px;
+            text-transform: uppercase;
+            margin-bottom: 50px;
+        }
+
+        .section-title::after {
+            content: "";
+            display: block;
+
+            width: 55px;
+            height: 3px;
+
+            background: var(--gold);
+
+            margin: 15px auto 0;
+        }
+
+        /* ================= COURSES ================= */
+
+        .courses {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 12px;
+        }
+
+        .course {
+            background: linear-gradient(145deg,#111418,#090a0c);
+            border: 1px solid var(--border);
+
+            padding: 28px 15px;
+            border-radius: 10px;
+
+            text-align: center;
+
+            transition: .3s;
+        }
+
+        .course:hover {
+            transform: translateY(-8px);
+            border-color: var(--gold);
+            box-shadow: 0 15px 40px rgba(255,181,27,.08);
+        }
+
+        .course-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .course h3 {
+            font-size: 14px;
+            line-height: 1.4;
+            margin-bottom: 12px;
+        }
+
+        .course p {
+            color: #999;
+            font-size: 11px;
+            line-height: 1.6;
+        }
+
+        /* ================= WHY US ================= */
+
+        .why {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .why h2 {
+            font-size: 40px;
+            margin-bottom: 30px;
+        }
+
+        .why h2 span {
+            color: var(--gold);
+        }
+
+        .why-list {
+            list-style: none;
+        }
+
+        .why-list li {
+            margin-bottom: 18px;
+            color: #ddd;
+            font-size: 14px;
+        }
+
+        .why-list li::before {
+            content: "✓";
+            color: var(--gold);
+            font-weight: bold;
+            margin-right: 12px;
+        }
+
+        .trader-image {
+    width: 100%;
+    height: 380px;
+    border-radius: 12px;
+    overflow: hidden;
+
+    border: 1px solid var(--border);
+
+    background: #101216;
+
+    position: relative;
+}
+
+.trader-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    display: block;
+
+    transition: transform 0.5s ease;
+}
+
+.trader-image:hover img {
+    transform: scale(1.05);
+}
+
+        /* ================= BATCH ================= */
+
+        .batch {
+            margin-top: 45px;
+
+            padding: 30px;
+
+            border: 1px solid var(--border);
+            border-radius: 10px;
+
+            background: linear-gradient(145deg,#121417,#08090a);
+        }
+
+        .batch h3 {
+            color: var(--gold);
+            font-size: 25px;
+            margin-bottom: 10px;
+        }
+
+        .batch p {
+            color: #aaa;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .limited {
+            color: #ff5a5a !important;
+            font-weight: 700;
+        }
+
+        .batch .btn {
+            width: 100%;
+            margin-top: 15px;
+        }
+
+        /* ================= TESTIMONIALS ================= */
+
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .testimonial {
+            padding: 25px;
+
+            border: 1px solid rgba(255,181,27,.3);
+            border-radius: 10px;
+
+            background: #0c0e10;
+        }
+
+        .stars {
+            color: var(--gold);
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+        }
+
+        .testimonial p {
+            color: #aaa;
+            font-size: 12px;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .testimonial strong {
+            color: var(--gold);
+            font-size: 13px;
+        }
+
+        /* ================= CTA ================= */
+
+        .cta {
+            margin-top: 100px;
+
+            padding: 60px 25px;
+
+            text-align: center;
+
+            background:
+                radial-gradient(circle, rgba(255,181,27,.12), transparent 55%),
+                #0b0d0f;
+
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .cta h2 {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            color: #aaa;
+            margin-bottom: 30px;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            padding: 35px 25px;
+            background: #030405;
+        }
+
+        .footer-container {
+            max-width: 1250px;
+            margin: auto;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .copyright {
+            color: #777;
+            font-size: 12px;
+        }
+
+        .socials {
+            display: flex;
+            gap: 15px;
+        }
+
+        .socials a {
+            width: 38px;
+            height: 38px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border: 1px solid #333;
+            border-radius: 50%;
+
+            color: white;
+            text-decoration: none;
+
+            transition: .3s;
+        }
+
+        .socials a:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+
+        /* ================= MOBILE MENU ================= */
+
+        .menu-btn {
+            display: none;
+            font-size: 28px;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media(max-width: 1100px) {
+
+            .nav-links {
+                gap: 15px;
+            }
+
+            .courses {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .features {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .feature:nth-child(3) {
+                border-right: none;
+            }
+
+            .testimonials {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media(max-width: 850px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-content p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-visual {
+                min-height: 400px;
+            }
+
+            .bitcoin {
+                width: 190px;
+                height: 190px;
+                font-size: 90px;
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stat:nth-child(2) {
+                border-right: none;
+            }
+
+            .features {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .why {
+                grid-template-columns: 1fr;
+            }
+
+            .why h2 {
+                font-size: 32px;
+            }
+
+            .trader-image {
+                height: 300px;
+            }
+        }
+
+        @media(max-width: 600px) {
+
+            .navbar {
+                height: 70px;
+            }
+
+            .logo-text strong {
+                font-size: 16px;
+            }
+
+            .logo-text span {
+                font-size: 8px;
+            }
+
+            .hero {
+                padding-top: 120px;
+            }
+
+            .hero-content h1 {
+                font-size: 42px;
+            }
+
+            .hero-content p {
+                font-size: 14px;
+            }
+
+            .hero-visual {
+                min-height: 320px;
+            }
+
+            .bitcoin {
+                width: 150px;
+                height: 150px;
+                font-size: 70px;
+            }
+
+            .stats {
+                grid-template-columns: 1fr 1fr;
+                margin-top: -20px;
+            }
+
+            .stat {
+                padding: 20px 10px;
+            }
+
+            .stat h3 {
+                font-size: 22px;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .feature {
+                border-right: none;
+                border-bottom: 1px solid rgba(255,255,255,.1);
+            }
+
+            .feature:last-child {
+                border-bottom: none;
+            }
+
+            .courses {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .testimonials {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                margin: 70px auto;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .cta h2 {
+                font-size: 28px;
+            }
+
+            .footer-container {
+                flex-direction: column;
+                gap: 25px;
+            }
+        }
+
+.payment-section {
+    padding: 85px 6%;
+    background: #08090a;
+    color: #ffffff;
+}
+
+.payment-heading {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto 45px;
+}
+
+.payment-tag {
+    display: inline-block;
+    color: #ffb612;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.payment-heading h2 {
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+.payment-heading h2 span {
+    color: #ffb612;
+}
+
+.payment-heading p {
+    color: #aaaab1;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.payment-container {
+    max-width: 1150px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    align-items: stretch;
+}
+
+.payment-card {
+    padding: 32px;
+    background: linear-gradient(145deg, #151619, #0e0f11);
+    border: 1px solid #303034;
+    border-radius: 14px;
+    transition: 0.3s;
+}
+
+.payment-card:hover {
+    border-color: rgba(255, 182, 18, 0.65);
+    transform: translateY(-3px);
+}
+
+.payment-icon {
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    background: rgba(255, 182, 18, 0.12);
+    border: 1px solid rgba(255, 182, 18, 0.35);
+    border-radius: 10px;
+    color: #ffb612;
+    font-size: 26px;
+    font-weight: 800;
+    margin-bottom: 22px;
+}
+
+.payment-card h3 {
+    font-size: 23px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.payment-muted {
+    color: #a6a6ad;
+    font-size: 12px;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.fee-row,
+.bank-detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 15px 0;
+    border-bottom: 1px solid #2a2a2d;
+    font-size: 12px;
+}
+
+.fee-row span,
+.bank-detail span {
+    color: #b6b6bc;
+}
+
+.fee-row strong {
+    color: #ffb612;
+    white-space: nowrap;
+}
+
+.bank-label {
+    display: inline-block;
+    color: #ffb612;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+}
+
+.bank-detail strong {
+    max-width: 60%;
+    text-align: right;
+    overflow-wrap: anywhere;
+    font-size: 12px;
+    color: #ffffff;
+}
+
+.payment-btn,
+.whatsapp-payment {
+    display: inline-block;
+    text-align: center;
+    background: #ffb612;
+    color: #111111;
+    border: none;
+    border-radius: 7px;
+    padding: 14px 20px;
+    font-size: 12px;
+    font-weight: 800;
+    transition: 0.3s;
+}
+
+.payment-btn {
+    display: block;
+    margin-top: 25px;
+}
+
+.payment-btn:hover,
+.whatsapp-payment:hover {
+    background: #ffd05a;
+    transform: translateY(-2px);
+}
+
+.bank-warning {
+    margin-top: 22px;
+    padding: 13px;
+    border-left: 3px solid #ffb612;
+    background: rgba(255, 182, 18, 0.07);
+    color: #c5c5c9;
+    font-size: 11px;
+    line-height: 1.8;
+}
+
+.payment-steps {
+    max-width: 1150px;
+    margin: 65px auto 0;
+    text-align: center;
+}
+
+.payment-steps > h3 {
+    font-size: 25px;
+    margin-bottom: 35px;
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+    text-align: left;
+}
+
+.step {
+    padding: 22px;
+    background: #111214;
+    border: 1px solid #2b2b2f;
+    border-radius: 10px;
+}
+
+.step > span {
+    display: block;
+    color: #ffb612;
+    font-size: 23px;
+    font-weight: 900;
+    margin-bottom: 16px;
+}
+
+.step h4 {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.step p {
+    color: #a6a6ad;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.whatsapp-payment {
+    margin-top: 35px;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+    .payment-section {
+        padding: 65px 4%;
+    }
+
+    .payment-container {
+        gap: 16px;
+    }
+
+    .payment-card {
+        padding: 24px;
+    }
+
+    .steps-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+    .payment-container {
+        grid-template-columns: 1fr;
+    }
+
+    .payment-card {
+        padding: 23px 18px;
+    }
+
+    .payment-card h3 {
+        font-size: 21px;
+    }
+
+    .fee-row,
+    .bank-detail {
+        gap: 10px;
+        font-size: 11px;
+    }
+
+    .steps-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .payment-steps {
+        margin-top: 45px;
+    }
+}
+
+
+
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+    <div class="logo">
+        <div class="logo-circle">CA</div>
+
+        <div class="logo-text">
+            <h2>CA TRADERS</h2>
+            <p>CRYPTO CURRENCY TRADING ACADEMY</p>
+        </div>
+    </div>
+
+    <!-- Hamburger Button -->
+    <button class="menu-toggle"
+            id="menuToggle"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="navMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <!-- Dropdown Menu -->
+    <nav class="nav-menu" id="navMenu">
+        <a href="index.html">Home</a>
+        <a href="#learn">What You'll Learn</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="courses.html">Courses</a>
+        <a href="#payment">Payment Details</a>
+        <a href="contact.html">Contact</a>
+
+        <a href="courses.html" class="menu-join">
+            JOIN THE ACADEMY →
+        </a>
+    </nav>
+</header>
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <div class="hero-grid">
+
+            <div class="hero-content">
+
+                <h1>
+                    MASTER<br>
+                    <span class="gold-text">CRYPTO TRADING</span><br>
+                    WITH CONFIDENCE
+                </h1>
+
+                <p>
+                    Learn the skills, strategies and mindset to trade
+                    crypto markets like a professional.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#courses" class="btn btn-primary">
+                        JOIN THE ACADEMY →
+                    </a>
+
+                    <a href="https://wa.me/94770749124" class="btn btn-outline">
+                        ☎ WHATSAPP US
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Bitcoin visual -->
+
+            <div class="hero-visual">
+
+                <div class="chart-bg"></div>
+
+                <div class="chart-line">
+
+                    <svg viewBox="0 0 500 250" preserveAspectRatio="none">
+
+                        <polyline
+                            points="0,200 50,170 80,190 120,120 150,150 190,80 230,110 270,70 310,100 350,40 390,75 430,25 470,60 500,20"
+                            fill="none"
+                            stroke="#ffb51b"
+                            stroke-width="3"
+                        />
+
+                    </svg>
+
+                </div>
+
+                <div class="bitcoin">
+                    ₿
+                </div>
+
+            </div>
+
+        </div>
+  
+<!-- STATS COUNTER SECTION -->
+<section class="stats-section" id="stats">
+
+    <div class="stat-box">
+        <h2 class="counter" data-target="1000" data-suffix="+">0</h2>
+        <p>Students</p>
+    </div>
+
+    <div class="stat-box">
+        <h2 class="counter" data-target="15" data-suffix="+">0</h2>
+        <p>Courses</p>
+    </div>
+
+    <div class="stat-box">
+        <h2 class="counter" data-target="3" data-suffix="+">0</h2>
+        <p>Years Experience</p>
+    </div>
+
+    <div class="stat-box">
+        <h2 class="counter live-counter"
+            data-target="1"
+            data-suffix=""
+            data-label="Live">Live</h2>
+        <p>Classes</p>
+    </div>
+
+</section>
+
+    <!-- ================= FEATURES ================= -->
+
+    <section class="features" id="learn">
+
+        <div class="feature">
+            <div class="feature-icon">🎓</div>
+            <h3>Live Classes</h3>
+            <p>අත්දැකීම් බහුල Crypto Traders ලාගෙන් සෘජුවම ඉගෙන ගන්න.</p>
+        </div>
+
+        <div class="feature">
+            <div class="feature-icon">📊</div>
+            <h3>Practical Learning</h3>
+            <p>සැබෑ Crypto වෙළඳපොළ විශ්ලේෂණය සහ ප්‍රායෝගික Trading පුහුණුව.</p>
+        </div>
+
+        <div class="feature">
+            <div class="feature-icon">👥</div>
+            <h3>Community Support</h3>
+            <p>විශේෂ Trading දැනුම සහ අත්දැකීම් බෙදාගන්නා අපගේ Premium Trading Community එකට අදම එක්වන්න!</p>
+        </div>
+
+        <div class="feature">
+            <div class="feature-icon">▶</div>
+            <h3>Recorded Lessons</h3>
+            <p>ඔබට පහසු ඕනෑම වේලාවක, ඕනෑම ස්ථානයක සිට පාඨමාලා පාඩම් ඉගෙන ගන්න.</p>
+        </div>
+
+        <div class="feature">
+            <div class="feature-icon">⚡</div>
+            <h3>Beginner Friendly</h3>
+            <p>ආරම්භකයින්ගේ සිට උසස් මට්ටමේ Traders ලා දක්වා, පියවරෙන් පියවර Trading ඉගෙන ගන්න.</p>
+        </div>
+
+    </section>
+
+
+    <!-- ================= COURSES ================= -->
+
+    <section class="section" id="courses">
+
+        <h2 class="section-title">
+            Our Courses
+        </h2>
+
+        <div class="courses">
+
+            <div class="course">
+                <div class="course-icon">📈</div>
+                <h3>BEGINNER CRYPTO TRADING</h3>
+                <p>Crypto Trading හි මූලික කරුණු ඉගෙනගෙන, සාර්ථක Trading ගමනකට අදම පියවර තබන්න!</p>
+            </div>
+
+            <div class="course">
+                <div class="course-icon">📊</div>
+                <h3>TECHNICAL ANALYSIS</h3>
+                <p>Crypto Charts, Price Patterns සහ Market Structure පිළිබඳ ගැඹුරු දැනුමක් ලබාගෙන Trading කුසලතා වර්ධනය කරගන්න.</p>
+            </div>
+
+            <div class="course">
+                <div class="course-icon">🎯</div>
+                <h3>ADVANCED TRADING</h3>
+                <p>නිවැරදි විනයක් සහිතව Trading කටයුතු කිරීමට අවශ්‍ය උසස් මට්ටමේ උපායමාර්ග ඉගෙන ගන්න.</p>
+            </div>
+
+            <div class="course">
+                <div class="course-icon">🧠</div>
+                <h3>SMART MONEY CONCEPTS</h3>
+                <p>විශාල මූල්‍ය ආයතන සහ වෘත්තීය වෙළඳුන් භාවිත කරන Trading සංකල්ප සහ උපායමාර්ග පිළිබඳව ඉගෙන ගන්න.</p>
+            </div>
+
+            <div class="course">
+                <div class="course-icon">🛡️</div>
+                <h3>RISK MANAGEMENT</h3>
+                <p>ඔබේ Trading ප්‍රාග්ධනය ආරක්ෂා කරගනිමින්, පාඩු සිදුවීමේ අවදානම නිසි ලෙස කළමනාකරණය කිරීමට ඉගෙන ගන්න.</p>
+            </div>
+
+            <div class="course">
+                <div class="course-icon">🧠</div>
+                <h3>TRADING PSYCHOLOGY</h3>
+                <p>සාර්ථක Trader කෙනෙකු වීමට අවශ්‍ය නිවැරදි මානසිකත්වය ගොඩනඟාගෙන, Trading කිරීමේදී ඇතිවන බිය, ලෝභය සහ අනෙකුත් හැඟීම් පාලනය කිරීමට ඉගෙන ගන්න.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    
+<!-- PAYMENT DETAILS SECTION -->
+<section class="payment-section" id="payment">
+
+    <div class="payment-heading">
+        <span class="payment-tag">SECURE YOUR ENROLLMENT</span>
+
+        <h2>PAYMENT <span>DETAILS</span></h2>
+
+        <p>
+           ඔබට අවශ්‍ය CA TRADERS පාඨමාලාව තෝරාගෙන ලියාපදිංචි වීමට, පහත සඳහන් ගෙවීම් උපදෙස් පිළිපදින්න.
+        </p>
+    </div>
+
+    <div class="payment-container">
+
+        <!-- COURSE FEE -->
+        <div class="payment-card fee-card">
+
+            <div class="payment-icon">₨</div>
+
+            <h3>Course Payment</h3>
+
+            <p class="payment-muted">
+                ඔබට අවශ්‍ය පාඨමාලාව තෝරාගෙන, ගාස්තුව අපගේ කණ්ඩායම සමඟ තහවුරු කරගන්න.
+            </p>
+
+            <div class="fee-row">
+                <span>Crypto Basic Course</span>
+                <strong>Rs. 28,000</strong>
+            </div>
+
+            <div class="fee-row">
+                <span>One Week Crypto Course</span>
+                <strong>Rs. 5,000</strong>
+            </div>
+
+            <div class="fee-row">
+                <span>VIP One Month</span>
+                <strong>Rs. 6,000</strong>
+            </div>
+
+            <div class="fee-row">
+                <span>VIP Lifetime</span>
+                <strong>Rs. 11,000</strong>
+            </div>
+
+            <a class="payment-btn"
+               href="https://wa.me/94770749124?text=Hello%20CA%20TRADERS%2C%20I%20want%20to%20confirm%20my%20course%20payment."
+               target="_blank" rel="noopener">
+                Confirm Course Fee →
+            </a>
+
+        </div>
+
+
+        <!-- BANK DETAILS -->
+        <div class="payment-card bank-card">
+
+            <span class="bank-label">BANK TRANSFER</span>
+
+            <h3>Bank Account Details</h3>
+
+            <p class="payment-muted">
+                ඔබ තහවුරු කරගත් පාඨමාලා ගාස්තුව පහත සඳහන් බැංකු ගිණුමට තැන්පත් කරන්න.
+            </p>
+
+            <div class="bank-detail">
+                <span>Bank Name</span>
+                <strong>LB Finance</strong>
+            </div>
+
+            <div class="bank-detail">
+                <span>Account Holder</span>
+                <strong>Mr A K Abeykoon</strong>
+            </div>
+
+            <div class="bank-detail">
+                <span>Account Number</span>
+                <strong>106013569260</strong>
+            </div>
+
+            <div class="bank-detail">
+                <span>Branch</span>
+                <strong>Corporate Office</strong>
+            </div>
+
+            <div class="bank-warning">
+                මුදල් ගෙවීමට පෙර, පහත සඳහන් බැංකු ගිණුම් විස්තර නිවැරදි බව CA TRADERS කණ්ඩායම සමඟ තහවුරු කරගන්න.
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- PAYMENT INSTRUCTIONS -->
+    <div class="payment-steps">
+
+        <h3>How to Complete Your Payment</h3>
+
+        <div class="steps-grid">
+
+            <div class="step">
+                <span>01</span>
+                <h4>Choose Your Course</h4>
+                <p>ඔබට අවශ්‍ය පාඨමාලාව තෝරාගෙන, එහි දැනට අය කරන පාඨමාලා ගාස්තුව තහවුරු කරගන්න.</p>
+            </div>
+
+            <div class="step">
+                <span>02</span>
+                <h4>Make Payment</h4>
+                <p>තහවුරු කරගත් බැංකු ගිණුම් විස්තර භාවිත කර එකඟ වූ මුදල බැර කරන්න.</p>
+            </div>
+
+            <div class="step">
+                <span>03</span>
+                <h4>Send Your Receipt</h4>
+                <p>ඔබගේ ගෙවීම් රිසිට්පත අපගේ නිල WhatsApp අංකයට එවන්න.</p>
+            </div>
+
+            <div class="step">
+                <span>04</span>
+                <h4>Confirm Enrollment</h4>
+                <p>තහවුරු කිරීම සහ පාඨමාලාවට ප්‍රවේශ වීමේ උපදෙස් ලැබෙන තෙක් රැඳී සිටින්න.</p>
+            </div>
+
+        </div>
+
+        <a class="whatsapp-payment"
+           href="https://wa.me/94770749124?text=Hello%20CA%20TRADERS%2C%20I%20have%20a%20question%20about%20course%20payments."
+           target="_blank" rel="noopener">
+            Contact Us About Payments ↗
+        </a>
+
+    </div>
+
+</section>
+
+
+    <!-- ================= TESTIMONIALS ================= -->
+
+    <section class="section" id="testimonials">
+
+        <h2 class="section-title">
+            Student <span class="gold-text">Reviews</span>
+        </h2>
+
+        <div class="testimonials">
+
+            <div class="testimonial">
+
+                <div class="stars">★★★★★</div>
+
+                <p>
+                    CA Traders සමඟ එක්වීම මගේ Trading ගමනට විශාල වෙනසක් කළා. මෙහි පාඩම් සරලව තේරුම් ගත හැකි අතර, ප්‍රායෝගිකව පුහුණු වීමටත් ඉතා ප්‍රයෝජනවත්!
+                </p>
+
+                <strong>– Shehan D.</strong>
+
+            </div>
+
+
+            <div class="testimonial">
+
+                <div class="stars">★★★★★</div>
+
+                <p>
+                    ශ්‍රී ලංකාවේ විශිෂ්ට Crypto Trading ඇකඩමියක්! ඉතා හොඳ මඟපෙන්වීමක්, සහයෝගයක් සහ එකිනෙකාට සහාය වන අපූරු Trading ප්‍රජාවක් මෙහි තිබෙනවා.
+                </p>
+
+                <strong>– Hasini M.</strong>
+
+            </div>
+
+
+            <div class="testimonial">
+
+                <div class="stars">★★★★★</div>
+
+                <p>
+                   CA TRADERS හරහා මම අවදානම් කළමනාකරණය සහ Trading මනෝවිද්‍යාව පිළිබඳව ඉගෙන ගත්තා. දැන් මට වඩාත් විශ්වාසයෙන් සහ නිවැරදි මානසිකත්වයකින් Trading කටයුතු කරන්න පුළුවන්!
+                </p>
+
+                <strong>– Nimsara K.</strong>
+
+            </div>
+
+
+            <div class="testimonial">
+
+                <div class="stars">★★★★★</div>
+
+                <p>
+                    ප්‍රායෝගික පුහුණුව, සජීවී වෙළඳපොළ විශ්ලේෂණය සහ සැබෑ Trading සඳහා භාවිත කළ හැකි උපායමාර්ග රැසක් ඉගෙන ගන්න පුළුවන්. හැමෝටම නිර්දේශ කළ හැකි විශිෂ්ට අත්දැකීමක්!
+                </p>
+
+                <strong>– Kavindu R.</strong>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CTA ================= -->
+
+    <section class="cta">
+
+        <h2>
+            READY TO START YOUR TRADING JOURNEY?
+        </h2>
+
+        <p>
+            Join CA Traders Crypto Currency Trading Academy Today!
+        </p>
+
+        <a href="https://wa.me/94770749124"
+           class="btn btn-primary">
+            JOIN THE ACADEMY NOW →
+        </a>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer id="contact">
+
+        <div class="footer-container">
+
+            <div class="copyright">
+                © 2026 CA Traders. All Rights Reserved.
+            </div>
+
+            <div class="socials">
+
+                <a href="#">f</a>
+                <a href="#">▶</a>
+                <a href="#">♪</a>
+                <a href="#">◎</a>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+<script>
+
+const statsSection = document.querySelector(".stats-section");
+const counters = document.querySelectorAll(".counter");
+
+let countersStarted = false;
+
+function startCounters() {
+    if (countersStarted) return;
+
+    countersStarted = true;
+
+    counters.forEach(counter => {
+        const target = Number(counter.dataset.target);
+        const suffix = counter.dataset.suffix || "";
+        const label = counter.dataset.label || "";
+
+        if (label) {
+            counter.textContent = label;
+            return;
+        }
+
+        const duration = 1800;
+        const startTime = performance.now();
+
+        counter.classList.add("counting");
+
+        function updateCounter(currentTime) {
+            const progress = Math.min(
+                (currentTime - startTime) / duration,
+                1
+            );
+
+            // Smooth ease-out animation
+            const easedProgress = 1 - Math.pow(1 - progress, 4);
+
+            const currentNumber = Math.floor(
+                target * easedProgress
+            );
+
+            counter.textContent =
+                currentNumber.toLocaleString("en-US") + suffix;
+
+            if (progress < 1) {
+                requestAnimationFrame(updateCounter);
+            } else {
+                counter.textContent =
+                    target.toLocaleString("en-US") + suffix;
+            }
+        }
+
+        requestAnimationFrame(updateCounter);
+    });
+}
+
+if (statsSection) {
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                startCounters();
+                observer.disconnect();
+            }
+        });
+    }, {
+        threshold: 0.35
+    });
+
+    observer.observe(statsSection);
+}
+
+</script>
+
+<script>
+    const menuToggle = document.getElementById("menuToggle");
+    const navMenu = document.getElementById("navMenu");
+
+    menuToggle.addEventListener("click", function () {
+        const isOpen = navMenu.classList.toggle("show");
+
+        menuToggle.classList.toggle("active", isOpen);
+        menuToggle.setAttribute("aria-expanded", isOpen);
+        menuToggle.setAttribute(
+            "aria-label",
+            isOpen ? "Close navigation menu" : "Open navigation menu"
+        );
+    });
+
+    // Link ekak click karama menu eka wahenawa
+    navMenu.querySelectorAll("a").forEach(function (link) {
+        link.addEventListener("click", function () {
+            navMenu.classList.remove("show");
+            menuToggle.classList.remove("active");
+            menuToggle.setAttribute("aria-expanded", "false");
+            menuToggle.setAttribute(
+                "aria-label",
+                "Open navigation menu"
+            );
+        });
+    });
+
+    // Menu eken pita click karama menu eka wahenawa
+    document.addEventListener("click", function (event) {
+        if (
+            !navMenu.contains(event.target) &&
+            !menuToggle.contains(event.target)
+        ) {
+            navMenu.classList.remove("show");
+            menuToggle.classList.remove("active");
+            menuToggle.setAttribute("aria-expanded", "false");
+            menuToggle.setAttribute(
+                "aria-label",
+                "Open navigation menu"
+            );
+        }
+    });
+</script>
+
+</body>
+</html>

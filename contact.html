@@ -1,0 +1,1558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact Us | CA TRADERS</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background: #050608;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        :root {
+            --gold: #ffb51b;
+            --gold-light: #ffd15c;
+            --dark: #050608;
+            --card: #0d0f12;
+            --border: rgba(255,181,27,.35);
+            --gray: #a5a5a5;
+        }
+
+
+        /* ================= NAVBAR ================= */
+
+        .navbar {
+            width: 100%;
+            height: 78px;
+
+            position: fixed;
+            top: 0;
+            left: 0;
+
+            z-index: 1000;
+
+            background: rgba(5,6,8,.95);
+            backdrop-filter: blur(15px);
+
+            border-bottom: 1px solid rgba(255,255,255,.08);
+        }
+
+        .nav-container {
+            max-width: 1250px;
+            height: 100%;
+            margin: auto;
+            padding: 0 25px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            text-decoration: none;
+            color: white;
+        }
+
+        .logo-icon {
+            width: 45px;
+            height: 45px;
+
+            border: 2px solid var(--gold);
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: var(--gold);
+            font-weight: 900;
+            font-size: 19px;
+        }
+
+        .logo-text strong {
+            display: block;
+            font-size: 20px;
+            letter-spacing: 1px;
+        }
+
+        .logo-text span {
+            display: block;
+            color: #999;
+            font-size: 9px;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: #ddd;
+            text-decoration: none;
+            font-size: 13px;
+            transition: .3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--gold);
+        }
+
+        .whatsapp-btn {
+            background: var(--gold);
+            color: #080808 !important;
+
+            padding: 13px 19px;
+            border-radius: 7px;
+
+            font-weight: 800 !important;
+        }
+
+        .menu-btn {
+            display: none;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+
+        /* ================= HERO ================= */
+
+        .contact-hero {
+            min-height: 450px;
+
+            padding: 150px 25px 80px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            position: relative;
+            overflow: hidden;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(255,181,27,.14),
+                    transparent 45%
+                ),
+                #050608;
+        }
+
+        .contact-hero::before,
+        .contact-hero::after {
+            content: "";
+
+            position: absolute;
+
+            border: 1px solid rgba(255,181,27,.08);
+
+            border-radius: 50%;
+        }
+
+        .contact-hero::before {
+            width: 500px;
+            height: 500px;
+        }
+
+        .contact-hero::after {
+            width: 750px;
+            height: 750px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .small-title {
+            color: var(--gold);
+
+            font-size: 12px;
+            font-weight: 800;
+
+            letter-spacing: 4px;
+
+            margin-bottom: 18px;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(45px, 6vw, 72px);
+
+            font-weight: 900;
+
+            text-transform: uppercase;
+
+            margin-bottom: 20px;
+        }
+
+        .hero-content h1 span {
+            color: var(--gold);
+        }
+
+        .hero-content p {
+            max-width: 650px;
+
+            margin: auto;
+
+            color: var(--gray);
+
+            font-size: 15px;
+
+            line-height: 1.8;
+        }
+
+
+        /* ================= CONTACT SECTION ================= */
+
+        .contact-section {
+            max-width: 1250px;
+
+            margin: 80px auto;
+
+            padding: 0 25px;
+
+            display: grid;
+
+            grid-template-columns: .9fr 1.1fr;
+
+            gap: 50px;
+        }
+
+
+        /* ================= LEFT ================= */
+
+        .contact-info h2 {
+            font-size: 38px;
+
+            margin-bottom: 18px;
+        }
+
+        .contact-info h2 span {
+            color: var(--gold);
+        }
+
+        .contact-info > p {
+            color: var(--gray);
+
+            font-size: 14px;
+
+            line-height: 1.8;
+
+            margin-bottom: 30px;
+        }
+
+        .info-card {
+            display: flex;
+            align-items: center;
+
+            gap: 17px;
+
+            padding: 18px;
+
+            margin-bottom: 13px;
+
+            border: 1px solid rgba(255,181,27,.25);
+
+            border-radius: 10px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #111418,
+                    #090a0c
+                );
+
+            transition: .3s;
+        }
+
+        .info-card:hover {
+            transform: translateX(6px);
+
+            border-color: var(--gold);
+
+            box-shadow:
+                0 12px 30px rgba(255,181,27,.08);
+        }
+
+        .info-icon {
+            width: 48px;
+            height: 48px;
+
+            flex-shrink: 0;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 10px;
+
+            background: rgba(255,181,27,.08);
+
+            border: 1px solid rgba(255,181,27,.3);
+
+            font-size: 21px;
+        }
+
+        .info-card h3 {
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .info-card p,
+        .info-card a {
+            color: #999;
+
+            font-size: 13px;
+
+            text-decoration: none;
+        }
+
+        .info-card a:hover {
+            color: var(--gold);
+        }
+
+
+        /* ================= SOCIAL ================= */
+
+        .social-section {
+            margin-top: 30px;
+        }
+
+        .social-section h3 {
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .social-icons a {
+            width: 43px;
+            height: 43px;
+
+            border: 1px solid rgba(255,181,27,.3);
+
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: white;
+
+            text-decoration: none;
+
+            font-weight: 800;
+
+            transition: .3s;
+        }
+
+        .social-icons a:hover {
+            background: var(--gold);
+            color: #080808;
+
+            transform: translateY(-4px);
+        }
+
+
+        /* ================= FORM ================= */
+
+        .contact-form-box {
+            padding: 35px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #111418,
+                    #08090b
+                );
+
+            border: 1px solid var(--border);
+
+            border-radius: 14px;
+
+            box-shadow:
+                0 20px 70px rgba(0,0,0,.35);
+        }
+
+        .contact-form-box h2 {
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        .form-description {
+            color: #888;
+
+            font-size: 13px;
+
+            margin-bottom: 28px;
+        }
+
+        .form-row {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 17px;
+        }
+
+        .form-group label {
+            display: block;
+
+            color: #ddd;
+
+            font-size: 12px;
+
+            font-weight: 600;
+
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+
+            width: 100%;
+
+            padding: 14px 15px;
+
+            background: #070809;
+
+            color: white;
+
+            border: 1px solid #292c30;
+
+            border-radius: 7px;
+
+            outline: none;
+
+            font-family: inherit;
+
+            font-size: 13px;
+
+            transition: .3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--gold);
+
+            box-shadow:
+                0 0 0 3px rgba(255,181,27,.08);
+        }
+
+        .form-group textarea {
+            min-height: 140px;
+            resize: vertical;
+        }
+
+        .form-group select {
+            cursor: pointer;
+        }
+
+        .submit-btn {
+            width: 100%;
+
+            padding: 16px;
+
+            border: none;
+
+            border-radius: 7px;
+
+            background: var(--gold);
+
+            color: #080808;
+
+            font-size: 14px;
+
+            font-weight: 900;
+
+            cursor: pointer;
+
+            transition: .3s;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 12px 35px rgba(255,181,27,.25);
+        }
+
+        .submit-btn:disabled {
+            opacity: .6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+
+        /* ================= MESSAGE ================= */
+
+        .form-message {
+            display: none;
+
+            margin-bottom: 20px;
+
+            padding: 15px;
+
+            border-radius: 7px;
+
+            font-size: 13px;
+
+            line-height: 1.5;
+        }
+
+        .form-message.success {
+            display: block;
+
+            color: #7dffae;
+
+            background: rgba(50,200,100,.08);
+
+            border: 1px solid rgba(50,200,100,.3);
+        }
+
+        .form-message.error {
+            display: block;
+
+            color: #ff8585;
+
+            background: rgba(255,60,60,.08);
+
+            border: 1px solid rgba(255,60,60,.3);
+        }
+
+
+        /* ================= LOCATION ================= */
+
+.location-section {
+    max-width: 1250px;
+    margin: 0 auto 80px;
+    padding: 0 25px;
+}
+
+.location-box {
+    position: relative;
+    height: 350px;
+
+    overflow: hidden;
+
+    border-radius: 14px;
+
+    border: 1px solid rgba(255,181,27,0.35);
+
+    background: #0b0d0f;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,0.35);
+}
+
+.location-box iframe {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    filter: grayscale(100%)
+            contrast(1.1)
+            brightness(0.65);
+}
+
+
+/* DARK MAP OVERLAY */
+
+.map-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle,
+            transparent 20%,
+            rgba(5,6,8,0.35) 100%
+        );
+}
+
+
+/* LOCATION CARD */
+
+.location-card {
+    pointer-events: auto;
+
+    min-width: 300px;
+
+    padding: 28px 35px;
+
+    text-align: center;
+
+    background:
+        rgba(8,9,11,0.94);
+
+    backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(255,181,27,0.5);
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 15px 50px rgba(0,0,0,0.5);
+}
+
+.location-icon {
+    width: 55px;
+    height: 55px;
+
+    margin: 0 auto 12px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(255,181,27,0.12);
+
+    border: 1px solid rgba(255,181,27,0.4);
+
+    font-size: 25px;
+}
+
+.location-card h2 {
+    color: white;
+
+    font-size: 24px;
+
+    margin-bottom: 7px;
+}
+
+.location-card p {
+    color: #999;
+
+    font-size: 12px;
+
+    margin-bottom: 20px;
+}
+
+
+/* GOOGLE MAP BUTTON */
+
+.directions-btn {
+    display: inline-block;
+
+    padding: 12px 20px;
+
+    background: #ffb51b;
+
+    color: #080808;
+
+    border-radius: 6px;
+
+    text-decoration: none;
+
+    font-size: 11px;
+
+    font-weight: 900;
+
+    letter-spacing: .5px;
+
+    transition: .3s;
+}
+
+.directions-btn:hover {
+    background: #ffd15c;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 25px rgba(255,181,27,0.25);
+}
+
+
+/* MOBILE */
+
+@media(max-width:600px) {
+
+    .location-section {
+        padding: 0 18px;
+    }
+
+    .location-box {
+        height: 400px;
+    }
+
+    .location-card {
+        min-width: auto;
+
+        width: 85%;
+
+        padding: 24px 20px;
+    }
+
+}
+
+        /* ================= CTA ================= */
+
+        .cta {
+            padding: 65px 25px;
+
+            text-align: center;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(255,181,27,.12),
+                    transparent 55%
+                ),
+                #0b0d0f;
+
+            border-top: 1px solid var(--border);
+
+            border-bottom: 1px solid var(--border);
+        }
+
+        .cta h2 {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .cta h2 span {
+            color: var(--gold);
+        }
+
+        .cta p {
+            color: #999;
+            margin-bottom: 28px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+
+            padding: 15px 30px;
+
+            background: var(--gold);
+
+            color: #080808;
+
+            border-radius: 7px;
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+            font-weight: 900;
+
+            transition: .3s;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 12px 35px rgba(255,181,27,.25);
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            padding: 35px 25px;
+
+            background: #030405;
+        }
+
+        .footer-container {
+            max-width: 1250px;
+
+            margin: auto;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+        }
+
+        .copyright {
+            color: #666;
+            font-size: 12px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 10px;
+        }
+
+        .footer-social a {
+            width: 36px;
+            height: 36px;
+
+            border: 1px solid #292929;
+
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: #aaa;
+
+            text-decoration: none;
+
+            transition: .3s;
+        }
+
+        .footer-social a:hover {
+            color: var(--gold);
+            border-color: var(--gold);
+        }
+
+
+        /* ================= RESPONSIVE ================= */
+
+        @media(max-width: 1050px) {
+
+            .nav-links {
+                gap: 14px;
+            }
+
+            .contact-section {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+
+        @media(max-width: 800px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .contact-hero {
+                min-height: 400px;
+            }
+
+        }
+
+
+        @media(max-width: 600px) {
+
+            .nav-container {
+                padding: 0 18px;
+            }
+
+            .logo-text strong {
+                font-size: 16px;
+            }
+
+            .logo-text span {
+                font-size: 7px;
+            }
+
+            .contact-section {
+                padding: 0 18px;
+                margin-top: 60px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-form-box {
+                padding: 25px 20px;
+            }
+
+            .contact-info h2 {
+                font-size: 30px;
+            }
+
+            .hero-content h1 {
+                font-size: 43px;
+            }
+
+            .hero-content p {
+                font-size: 14px;
+            }
+
+            .cta h2 {
+                font-size: 28px;
+            }
+
+            .footer-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="contact-hero">
+
+    <div class="hero-content">
+
+        <div class="small-title">
+            CA TRADERS ACADEMY
+        </div>
+
+        <h1>
+            GET IN <span>TOUCH</span>
+        </h1>
+
+        <p>
+            Have questions about our crypto trading courses,
+            upcoming batches or enrollment?
+            Our team is ready to help you.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CONTACT SECTION
+===================================================== -->
+
+<section class="contact-section">
+
+
+    <!-- ================= LEFT ================= -->
+
+    <div class="contact-info">
+
+        <h2>
+            Let's <span>Talk</span>
+        </h2>
+
+        <p>
+            Whether you're completely new to crypto trading
+            or looking to improve your trading skills,
+            feel free to contact CA TRADERS.
+        </p>
+
+
+        <!-- WhatsApp -->
+
+        <div class="info-card">
+
+            <div class="info-icon">
+                💬
+            </div>
+
+            <div>
+
+                <h3>
+                    WhatsApp
+                </h3>
+
+                <!-- CHANGE NUMBER -->
+
+                <a
+                    href="https://wa.me/94770749124"
+                    target="_blank"
+                >
+                    +94 77 074 9124
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Phone -->
+
+        <div class="info-card">
+
+            <div class="info-icon">
+                📞
+            </div>
+
+            <div>
+
+                <h3>
+                    Phone
+                </h3>
+
+                <!-- CHANGE NUMBER -->
+
+                <a href="tel:+94702849455">
+                    +94 70 284 9455
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Email -->
+
+        <div class="info-card">
+
+            <div class="info-icon">
+                ✉️
+            </div>
+
+            <div>
+
+                <h3>
+                    Email
+                </h3>
+
+                <!-- CHANGE EMAIL -->
+
+                <a href="mailto:catraderpvt@gmail.com">
+                    catraderpvt@gmail.com
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Location -->
+
+        <div class="info-card">
+
+            <div class="info-icon">
+                📍
+            </div>
+
+            <div>
+
+                <h3>
+                    Location
+                </h3>
+
+                <p>
+                    Sri Lanka
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- SOCIAL -->
+
+        <div class="social-section">
+
+            <h3>
+                Follow CA TRADERS
+            </h3>
+
+            <div class="social-icons">
+
+                <!-- CHANGE LINKS -->
+
+                <a href="#" target="_blank">
+                    f
+                </a>
+
+                <a href="#" target="_blank">
+                    ▶
+                </a>
+
+                <a href="#" target="_blank">
+                    ♪
+                </a>
+
+                <a href="#" target="_blank">
+                    ◎
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ================= FORM ================= -->
+
+    <div class="contact-form-box">
+
+        <h2>
+            Send Us a Message
+        </h2>
+
+        <p class="form-description">
+            Fill in the form and our team will get back to you.
+        </p>
+
+
+        <!-- SUCCESS / ERROR MESSAGE -->
+
+        <div
+            id="formMessage"
+            class="form-message"
+        ></div>
+
+
+        <!-- =================================================
+             FORMSPREE FORM
+
+             CHANGE:
+             YOUR_FORM_ID
+
+             Example:
+             https://formspree.io/f/xabcdefg
+        ================================================== -->
+
+        <form
+            id="contactForm"
+            action="https://formspree.io/f/mdenlnlz"
+            method="POST"
+        >
+
+
+            <!-- NAME + PHONE -->
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label>
+                        Your Name *
+                    </label>
+
+                    <input
+                        type="text"
+                        name="name"
+                        placeholder="Enter your name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Phone Number *
+                    </label>
+
+                    <input
+                        type="tel"
+                        name="phone"
+                        placeholder="+94 XX XXX XXXX"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+
+            <!-- EMAIL -->
+
+            <div class="form-group">
+
+                <label>
+                    Email Address *
+                </label>
+
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="your@email.com"
+                    required
+                >
+
+            </div>
+
+
+
+            <!-- COURSE -->
+
+            <div class="form-group">
+
+                <label>
+                    Interested Course
+                </label>
+
+                <select name="course">
+
+                    <option value="">
+                        Select a course
+                    </option>
+
+                    <option value="Beginner Crypto Trading">
+                        Beginner Crypto Trading
+                    </option>
+
+                    <option value="One Week Course">
+                        One Week Course
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- MESSAGE -->
+
+            <div class="form-group">
+
+                <label>
+                    Your Message *
+                </label>
+
+                <textarea
+                    name="message"
+                    placeholder="Write your message here..."
+                    required
+                ></textarea>
+
+            </div>
+
+
+
+            <!-- SUBJECT -->
+
+            <input
+                type="hidden"
+                name="_subject"
+                value="New CA TRADERS Website Inquiry"
+            >
+
+
+            <!-- BUTTON -->
+
+            <button
+                type="submit"
+                class="submit-btn"
+                id="submitBtn"
+            >
+                SEND MESSAGE →
+            </button>
+
+
+        </form>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     LOCATION
+===================================================== -->
+
+<section class="location-section">
+
+    <div class="location-box">
+
+        <!-- Google Map -->
+        <iframe
+            src="https://www.google.com/maps?q=7.4329917,80.5591386&z=16&output=embed"
+            width="100%"
+            height="350"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+
+
+        <!-- Map Overlay -->
+        <div class="map-overlay">
+
+            <div class="location-card">
+
+                <div class="location-icon">
+                    📍
+                </div>
+
+                <h2>
+                    CA TRADERS
+                </h2>
+
+                <p>
+                    Crypto Currency Trading Academy
+                </p>
+
+                <a
+                    href="https://maps.app.goo.gl/PB4uFhiPw3EYXBWP6?g_st=ac"
+                    target="_blank"
+                    class="directions-btn"
+                >
+                    OPEN IN GOOGLE MAPS →
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CTA
+===================================================== -->
+
+<section class="cta">
+
+    <h2>
+        READY TO START <span>TRADING?</span>
+    </h2>
+
+    <p>
+        Join CA TRADERS and start building your trading knowledge today.
+    </p>
+
+    <!-- CHANGE NUMBER -->
+
+    <a
+        href="https://wa.me/94770749124"
+        class="cta-btn"
+        target="_blank"
+    >
+        CHAT WITH US ON WHATSAPP →
+    </a>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <div class="footer-container">
+
+        <div class="copyright">
+
+            © 2026 CA TRADERS.
+            All Rights Reserved.
+
+        </div>
+
+
+        <div class="footer-social">
+
+            <a href="#" target="_blank">
+                f
+            </a>
+
+            <a href="#" target="_blank">
+                ▶
+            </a>
+
+            <a href="#" target="_blank">
+                ♪
+            </a>
+
+            <a href="#" target="_blank">
+                ◎
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+    const form = document.getElementById("contactForm");
+
+    const messageBox = document.getElementById("formMessage");
+
+    const submitBtn = document.getElementById("submitBtn");
+
+
+    form.addEventListener("submit", async function(event) {
+
+        event.preventDefault();
+
+
+        /* Loading */
+
+        submitBtn.disabled = true;
+
+        submitBtn.innerHTML = "SENDING...";
+
+
+        messageBox.className = "form-message";
+
+        messageBox.innerHTML = "";
+
+
+        try {
+
+            const response = await fetch(
+                form.action,
+                {
+                    method: "POST",
+
+                    body: new FormData(form),
+
+                    headers: {
+                        "Accept": "application/json"
+                    }
+                }
+            );
+
+
+            if (response.ok) {
+
+                messageBox.className =
+                    "form-message success";
+
+                messageBox.innerHTML =
+                    "✓ Message sent successfully! " +
+                    "Thank you for contacting CA TRADERS. " +
+                    "We will get back to you soon.";
+
+                form.reset();
+
+            } else {
+
+                throw new Error(
+                    "Something went wrong."
+                );
+
+            }
+
+        }
+
+        catch (error) {
+
+            messageBox.className =
+                "form-message error";
+
+            messageBox.innerHTML =
+                "✕ Sorry, your message could not be sent. " +
+                "Please try again or contact us through WhatsApp.";
+
+        }
+
+
+        submitBtn.disabled = false;
+
+        submitBtn.innerHTML =
+            "SEND MESSAGE →";
+
+    });
+
+
+    /* ================= MOBILE MENU ================= */
+
+    const menuBtn =
+        document.querySelector(".menu-btn");
+
+    const navLinks =
+        document.querySelector(".nav-links");
+
+
+    menuBtn.addEventListener("click", function() {
+
+        if (navLinks.style.display === "flex") {
+
+            navLinks.style.display = "none";
+
+        } else {
+
+            navLinks.style.display = "flex";
+
+            navLinks.style.flexDirection = "column";
+
+            navLinks.style.position = "absolute";
+
+            navLinks.style.top = "78px";
+
+            navLinks.style.left = "0";
+
+            navLinks.style.width = "100%";
+
+            navLinks.style.padding = "25px";
+
+            navLinks.style.background = "#08090b";
+
+            navLinks.style.borderBottom =
+                "1px solid rgba(255,181,27,.3)";
+
+        }
+
+    });
+
+</script>
+
+
+</body>
+</html>
